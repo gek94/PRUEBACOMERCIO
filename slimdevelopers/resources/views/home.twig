@@ -1,0 +1,38 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+  <h2>Empleados</h2>
+  <p>Empleados de la empresa Developers:</p>
+  <form class="navbar-form navbar-left" role="search" action="{{ path_for('employee.search') }}" method="post">
+      <div class="form-group">
+          <input id="email" name ="email" type="text" class="form-control" placeholder="@hotmail.com">
+      </div>
+      <button type="submit" class="btn btn-default">Buscar</button>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Detalle</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th class="text-center">Puesto</th>
+        <th class="text-center">Salario</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for emp in employees %}
+        <tr>
+          <td>
+            <div class="text-center">
+              <div url="{{ path_for('employee.detail') }}" uid="{{ emp.id }}" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></div>
+            </div>
+          </td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td class="text-center">{{ emp.position }}</td>
+          <td class="text-center">{{ emp.salary }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

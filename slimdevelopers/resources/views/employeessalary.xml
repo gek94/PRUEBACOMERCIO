@@ -1,0 +1,22 @@
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;EMPLEADOS&gt;
+{% for key,emp in employees %}
+&lt;EMPLEADO&gt;
+&lt;id&gt;{{ emp.id }}&lt;/id&gt;
+&lt;isOnline&gt;{{ emp.isOnline }}&lt;/isOnline&gt;
+&lt;salary&gt;{{ emp.salary }}&lt;/salary&gt;
+&lt;age&gt;{{ emp.age }}&lt;/age&gt;
+&lt;position&gt;{{ emp.position }}&lt;/position&gt;
+&lt;name&gt;{{ emp.name }}&lt;/name&gt;
+&lt;gender&gt;{{ emp.gender }}&lt;/gender&gt;
+&lt;email&gt;{{ emp.email }}&lt;/email&gt;
+&lt;phone&gt;{{ emp.phone }}&lt;/phone&gt;
+&lt;address&gt;{{ emp.address }}&lt;/address&gt;
+ {% for sk in detailemployee.skills %}
+&lt;skills&gt;
+&lt;skill&gt;{{ emp.skill }}&lt;/skill&gt;
+&lt;/skills&gt;
+ {% endfor %}
+&lt;/EMPLEADO&gt;
+{% endfor %}
+&lt;/EMPLEADOS&gt;

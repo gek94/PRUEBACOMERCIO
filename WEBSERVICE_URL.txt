@@ -1,0 +1,1 @@
+http://localhost/slimdevelopers/public/employee/salary?minimo=2000&maximo=3000

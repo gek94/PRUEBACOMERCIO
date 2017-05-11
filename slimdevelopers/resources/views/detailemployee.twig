@@ -1,0 +1,47 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+  <div style="display:table-cell">
+    <a class="btn btn-success glyphicon glyphicon-arrow-left" href="{{ path_for('home') }}" style="margin-bottom: 16px;margin-right: 6px;"></a>
+  </div>
+  <div style="display:table-cell">
+    <h2>Detalle empleado:</h2>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Nombre:</span>
+       	<span>{{ detailemployee.name }}</span>
+    </div>
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Email:</span>
+       	<span>{{ detailemployee.email }}</span>
+    </div>
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Telefono:</span>
+       	<span>{{ detailemployee.phone }}</span>
+    </div>
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Dirección:</span>
+       	<span>{{ detailemployee.address }}</span>
+    </div>
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Puesto:</span>
+       	<span>{{ detailemployee.position }}</span>
+    </div>
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Salario:</span>
+       	<span>{{ detailemployee.salary }}</span>
+    </div>
+    <div class="col-xs-6">
+       	<span style="font-weight: bolder;">Habilidades:</span>
+        <span>| 
+        {% for sk in detailemployee.skills %}
+
+        {{ sk.skill }} |
+
+        {% endfor %}
+        </span>
+    </div>
+  </div>
+{% endblock %}
